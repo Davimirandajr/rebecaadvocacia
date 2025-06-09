@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rebeca Miranda Advocacia</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+</head>
+
+<body>
+  <div id="particles-js"></div>
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 70 },
+        size: { value: 3 },
+        color: { value: "#7b1e3b" },
+        move: { speed: 1 },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#7b1e3b",
+          opacity: 0.4,
+          width: 1,
+        },
+      },
+      interactivity: {
+        events: {
+          onhover: { enable: true, mode: "repulse" },
+        },
+      },
+      retina_detect: true,
+    });
+  </script>
+
+  <header>
+    <div class="container">
+      <h1 class="logo"><i data-lucide="scale" style="margin-right: 8px;"></i> Rebeca Miranda Advocacia</h1>
+      <nav>
+        <a href="#"><i data-lucide="home" style="margin-right: 5px;"></i>Início</a>
+        <a href="#sobre"><i data-lucide="info" style="margin-right: 5px;"></i>Sobre</a>
+        
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2>Agende sua consulta jurídica com agilidade e segurança</h2>
+      <p>Profissionais experientes prontos para te atender com excelência.</p>
+      <div class="btn-group">
+        <a href="https://api.whatsapp.com/send?phone=55981674236" target="_blank" rel="noopener" class="btn primary">
+          <i data-lucide="message-circle" style="margin-right: 8px;"></i>Contato via WhatsApp
+        </a>
+        <a href="#" class="btn secondary"><i data-lucide="clock" style="margin-right: 8px;"></i>Ver Disponibilidade</a>
+      </div>
+    </section>
+
+    <section class="agenda-area">
+      <h3><i data-lucide="calendar-days" style="margin-right: 8px;"></i> Área de Agendamento</h3>
+      <p>Aqui você poderá marcar sua consulta em breve.</p>
+    </section>
+
+   <section id="sobre" class="sobre-area">
+  <div class="sobre-img">
+    <img src="image/WhatsApp Image 2025-06-08 at 20.26.51.jpeg" alt="Advogada trabalhando" />
+  </div>
+  <div class="sobre-texto">
+    <h2>Sobre a Rebeca Miranda </h2>
+    <p>Com ampla experiência nas áreas de Direito Tributário, Direito Empresarial e Direito das Telecomunicações, oferecemos consultoria e assessoria jurídica de alta qualidade, garantindo segurança e eficiência para nossos clientes.</p>
+    
+    <h3>Direito Tributário</h3>
+    <p>Atuamos na análise, planejamento e solução de questões tributárias, buscando minimizar riscos fiscais e otimizar a carga tributária de empresas e pessoas físicas.</p>
+    
+    <h3>Direito Empresarial</h3>
+    <p>Prestamos serviços jurídicos para constituição, reorganização e proteção de negócios, cuidando de contratos, sociedades, e questões regulatórias para o crescimento seguro da sua empresa.</p>
+    
+    <h3>Direito das Telecomunicações</h3>
+    <p>Especializados em questões regulatórias e contratuais do setor de telecomunicações, oferecemos suporte jurídico para operadores e prestadores de serviços, garantindo conformidade legal e competitividade.</p>
+  </div>
+</section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Rebeca Miranda Advocacia. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
+
