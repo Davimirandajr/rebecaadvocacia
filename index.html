@@ -74,16 +74,16 @@
             </thead>
             <tbody>
               <tr>
-                <td>Segunda á Sexta</td>
-                <td>8h ás 18</td>
+                <td>Domingo</td>
+                <td>Não há expediente</td>
               </tr>
               <tr>
                 <td>Sábado</td>
                 <td>Até 12h</td>
               </tr>
               <tr>
-                <td>Domingo</td>
-                <td>Não há expediente</td>
+                <td>Segunda a Sexta</td>
+                <td>8h às 18h</td>
               </tr>
             </tbody>
           </table>
@@ -118,26 +118,29 @@
     <p>&copy; 2025 Rebeca Miranda Advocacia. Todos os direitos reservados.</p>
   </footer>
 
-<script>
-  lucide.createIcons();
-  const btnDisponibilidade = document.getElementById("btn-disponibilidade");
-  const modalDisponibilidade = document.getElementById("modal-disponibilidade");
-  const closeButton = document.querySelector(".close-button");
-  
-  btnDisponibilidade.addEventListener("click", function(event) {
-    event.preventDefault();
-    modalDisponibilidade.style.display = "flex";
-  });
+  <script>
+    lucide.createIcons();
 
-  closeButton.addEventListener("click", function() {
-    modalDisponibilidade.style.display = "none";
-  });
+    // Lógica do Modal
+    const btnDisponibilidade = document.getElementById("btn-disponibilidade");
+    const modalDisponibilidade = document.getElementById("modal-disponibilidade");
+    const closeButton = document.querySelector(".close-button");
 
-  window.addEventListener("click", function(event) {
-    if (event.target == modalDisponibilidade) {
+    btnDisponibilidade.addEventListener("click", function(event) {
+      event.preventDefault();
+      // Altera para 'flex' para exibir e centralizar o modal
+      modalDisponibilidade.style.display = "flex";
+    });
+
+    closeButton.addEventListener("click", function() {
       modalDisponibilidade.style.display = "none";
-    }
-  });
-</script>
+    });
+
+    window.addEventListener("click", function(event) {
+      if (event.target == modalDisponibilidade) {
+        modalDisponibilidade.style.display = "none";
+      }
+    });
+  </script>
 </body>
 </html>
