@@ -209,19 +209,18 @@ footer {
 
 /* Estilos para o Modal */
 .modal {
-  display: none; /* Escondido por padrão - será 'flex' ao clicar */
-  position: fixed; /* Fica por cima de tudo */
-  z-index: 1000; /* Garante que fique no topo */
+  display: none; /* ESSA LINHA É CRÍTICA */
+  position: fixed;
+  z-index: 1000;
   left: 0;
   top: 0;
-  width: 100%; /* Largura total */
-  height: 100%; /* Altura total */
-  overflow: auto; /* Habilita scroll se o conteúdo for muito grande */
-  background-color: rgba(0,0,0,0.6); /* Fundo escuro com transparência */
-  align-items: center; /* Centraliza verticalmente quando display: flex */
-  justify-content: center; /* Centraliza horizontalmente quando display: flex */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+  align-items: center;
+  justify-content: center;
 }
-
 .modal-content {
   background-color: #fefefe;
   margin: auto; /* Centraliza horizontalmente */
