@@ -22,7 +22,7 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 20px; /* Mantém um padding padrão para desktops */
 }
 
 /* Header */
@@ -142,7 +142,7 @@ nav a:hover {
   flex-wrap: wrap; /* Permite que os itens quebrem a linha */
   align-items: center;
   gap: 50px;
-  padding: 80px 0;
+  padding: 80px 0; /* Padding vertical padrão para desktop */
   margin-top: 40px;
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
@@ -166,8 +166,8 @@ nav a:hover {
 
 .sobre-texto {
   flex: 2; /* Ocupa o dobro do espaço da imagem */
-  min-width: 300px; /* Largura mínima para o texto */
-  padding-right: 20px; /* Espaçamento à direita */
+  min-width: 300px; /* Largura mínima para o texto (desktop) */
+  padding-right: 20px; /* Espaçamento à direita (desktop) */
 }
 
 .sobre-texto h2 {
@@ -192,6 +192,9 @@ nav a:hover {
   line-height: 1.7;
   color: #444;
   margin-bottom: 15px;
+  /* Adicionar quebra de palavra para evitar vazamento em telas pequenas */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 /* Footer */
@@ -326,11 +329,14 @@ footer {
   .sobre-area {
     flex-direction: column;
     gap: 30px;
-    padding: 50px 0;
+    padding: 50px 20px; /* <--- AQUI ESTÁ A MUDANÇA PRINCIPAL: Adicione padding horizontal */
+    /* Garante que o conteúdo da seção 'sobre' tenha um respiro nas laterais */
   }
 
   .sobre-texto {
-    padding-right: 0;
+    padding: 0 15px; /* <--- ADICIONADO: Padding interno para o texto, garante respiro */
+    padding-right: 0; /* Mantido para anular o padding-right global, mas o 'padding: 0 15px;' já o substitui efetivamente */
+    min-width: unset; /* <--- ADICIONADO: Permite que a largura do texto se ajuste */
   }
 
   .sobre-texto h2 {
@@ -340,5 +346,12 @@ footer {
 
   .sobre-texto h3 {
     font-size: 1.4em;
+  }
+
+  .sobre-texto p {
+    /* Garante que não há margens ou paddings negativos que possam causar o problema */
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left; /* Garante que o texto não esteja centralizado se não for intencional */
   }
 }
