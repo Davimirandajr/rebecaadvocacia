@@ -44,53 +44,73 @@
       <nav>
         <a href="#"><i data-lucide="home" style="margin-right: 5px;"></i>Início</a>
         <a href="#sobre"><i data-lucide="info" style="margin-right: 5px;"></i>Sobre</a>
-        
       </nav>
     </div>
   </header>
 
   <main class="container">
     <section class="hero">
-    <h2>Agende sua consulta jurídica com Rebeca Santos Miranda</h2>
-<p>Profissional experiente, pronta para te atender com agilidade, segurança e excelência.</p>
-<div class="btn-group">
-  <a href="https://api.whatsapp.com/send?phone=559891674236" target="_blank" rel="noopener" class="btn primary">
-    <i data-lucide="message-circle" style="margin-right: 8px;"></i>Contato via WhatsApp
-  </a>
-  <a href="#" id="btn-disponibilidade" class="btn secondary">
-    <i data-lucide="clock" style="margin-right: 8px;"></i>Consultar Horários Disponíveis
-  </a>
-</div>
+      <h2>Agende sua consulta jurídica com Rebeca Santos Miranda</h2>
+      <p>Profissional experiente, pronta para te atender com agilidade, segurança e excelência.</p>
+      <div class="btn-group">
+        <a href="https://api.whatsapp.com/send?phone=559891674236" target="_blank" rel="noopener" class="btn primary">
+          <i data-lucide="message-circle" style="margin-right: 8px;"></i>Contato via WhatsApp
+        </a>
+        <a href="#" id="btn-disponibilidade" class="btn secondary">
+          <i data-lucide="clock" style="margin-right: 8px;"></i>Consultar Horários Disponíveis
+        </a>
+      </div>
 
-<p id="mensagem-disponibilidade" style="margin-top: 12px; font-weight: 500; color: #333;"></p>
+      <div id="modal-disponibilidade" class="modal">
+        <div class="modal-content">
+          <span class="close-button">&times;</span>
+          <h3>Horários de Atendimento</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Dia da Semana</th>
+                <th>Horário</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Domingo</td>
+                <td>Não há expediente</td>
+              </tr>
+              <tr>
+                <td>Sábado</td>
+                <td>Até 12h</td>
+              </tr>
+              <tr>
+                <td>Segunda a Sexta</td>
+                <td>8h às 18h</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="modal-info">Para agendamento e informações mais detalhadas, entre em contato via WhatsApp.</p>
+        </div>
+      </div>
 
-<script>
-  document.getElementById("btn-disponibilidade").addEventListener("click", function (event) {
-    event.preventDefault();
-    const mensagem = document.getElementById("mensagem-disponibilidade");
-    mensagem.textContent = "Rebeca Miranda está disponível para atendimentos conforme sua necessidade. Entre em contato pelo WhatsApp para agendar sua consulta.";
-  });
-</script>
+    </section>
 
+    <section id="sobre" class="sobre-area">
+      <div class="sobre-img">
+        <img src="image/WhatsApp Image 2025-06-08 at 20.26.51.jpeg" alt="Advogada trabalhando" />
+      </div>
+      <div class="sobre-texto">
+        <h2>Sobre a Rebeca Miranda </h2>
+        <p>Com ampla experiência nas áreas de Direito Tributário, Direito Empresarial e Direito das Telecomunicações, oferecemos consultoria e assessoria jurídica de alta qualidade, garantindo segurança e eficiência para nossos clientes.</p>
 
-   <section id="sobre" class="sobre-area">
-  <div class="sobre-img">
-    <img src="image/WhatsApp Image 2025-06-08 at 20.26.51.jpeg" alt="Advogada trabalhando" />
-  </div>
-  <div class="sobre-texto">
-    <h2>Sobre a Rebeca Miranda </h2>
-    <p>Com ampla experiência nas áreas de Direito Tributário, Direito Empresarial e Direito das Telecomunicações, oferecemos consultoria e assessoria jurídica de alta qualidade, garantindo segurança e eficiência para nossos clientes.</p>
-    
-    <h3>Direito Tributário</h3>
-    <p>Atuamos na análise, planejamento e solução de questões tributárias, buscando minimizar riscos fiscais e otimizar a carga tributária de empresas e pessoas físicas.</p>
-    
-    <h3>Direito Empresarial</h3>
-    <p>Prestamos serviços jurídicos para constituição, reorganização e proteção de negócios, cuidando de contratos, sociedades, e questões regulatórias para o crescimento seguro da sua empresa.</p>
-    
-    <h3>Direito das Telecomunicações</h3>
-    <p>Especializados em questões regulatórias e contratuais do setor de telecomunicações, oferecemos suporte jurídico para operadores e prestadores de serviços, garantindo conformidade legal e competitividade.</p>
-  </div>
-</section>
+        <h3>Direito Tributário</h3>
+        <p>Atuamos na análise, planejamento e solução de questões tributárias, buscando minimizar riscos fiscais e otimizar a carga tributária de empresas e pessoas físicas.</p>
+
+        <h3>Direito Empresarial</h3>
+        <p>Prestamos serviços jurídicos para constituição, reorganização e proteção de negócios, cuidando de contratos, sociedades, e questões regulatórias para o crescimento seguro da sua empresa.</p>
+
+        <h3>Direito das Telecomunicações</h3>
+        <p>Especializados em questões regulatórias e contratuais do setor de telecomunicações, oferecemos suporte jurídico para operadores e prestadores de serviços, garantindo conformidade legal e competitividade.</p>
+      </div>
+    </section>
 
   </main>
 
@@ -98,9 +118,26 @@
     <p>&copy; 2025 Rebeca Miranda Advocacia. Todos os direitos reservados.</p>
   </footer>
 
-  <script>
-    lucide.createIcons();
-  </script>
+<script>
+  lucide.createIcons();
+  const btnDisponibilidade = document.getElementById("btn-disponibilidade");
+  const modalDisponibilidade = document.getElementById("modal-disponibilidade");
+  const closeButton = document.querySelector(".close-button");
+
+  btnDisponibilidade.addEventListener("click", function(event) {
+    event.preventDefault();
+    modalDisponibilidade.style.display = "flex";
+  });
+
+  closeButton.addEventListener("click", function() {
+    modalDisponibilidade.style.display = "none";
+  });
+
+  window.addEventListener("click", function(event) {
+    if (event.target == modalDisponibilidade) {
+      modalDisponibilidade.style.display = "none";
+    }
+  });
+</script>
 </body>
 </html>
-
